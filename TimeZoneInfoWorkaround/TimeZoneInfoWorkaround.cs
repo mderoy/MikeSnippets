@@ -118,9 +118,11 @@ namespace Unity
 	    //Set the local time to UTC...simulates a device that does not currently support TimeZoneInfo
 	    localTzField.SetValue(cachedData, TimeZoneInfo.Utc);
 	    Console.WriteLine("UTC To Local Time Fails: " + DateTime.UtcNow.ToLocalTime());
+	    Console.WriteLine("DateTime.Now Fails: " + DateTime.Now);
 	    //Set the local time to our created one
 	    localTzField.SetValue(cachedData, local);
 	    Console.WriteLine("UTC To Local Time Success: " + DateTime.UtcNow.ToLocalTime());
+	    Console.WriteLine("DateTime.Now Success: " + DateTime.Now);
 
 	    //Created Custom Timezone can also be used for conversion without reflection
 	    Console.WriteLine("UTC To Local Time Success No Reflection: " + TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, local));
